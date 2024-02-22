@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+        body {
+            background-color: #222;
+            color: #ddd;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        #chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        #message-form {
+            margin-top: 20px;
+        }
+
+        #message-input {
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat actual</h1>
+
+    <div id="chat-container">
+        {{#each messages}}
+            <p><strong>{{this.user}}:</strong> {{this.message}}</p>
+        {{/each}}
+    </div>
+
+    <form id="message-form">
+        <input type="text" id="message-input" placeholder="Escribe tu mensaje..." required>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
